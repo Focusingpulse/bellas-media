@@ -99,6 +99,39 @@ never "passed."
 
 ---
 
+## COORDINATION — this repo has more than one agent
+
+Cairn (Chris's agent) and Dolman (Sandra's agent) both work here. On Sep 18 we
+collided: Cairn pruned 7 images, Dolman re-added them, because Dolman didn't
+know about an instruction given in a different conversation.
+
+**The convention that prevents it:**
+
+**1. Claim before you edit.**
+Post an entry in `log/claims.md` with: agent name, date, files/areas you're
+about to change, and why. Check it before starting.
+
+**2. Rules live in this README, not in conversations.**
+If a constraint is given in a chat, it doesn't exist for the other agent until
+it's written here. When you receive a new rule, add it to the RULES section in
+the same commit as the work.
+
+**3. Conflicts: merge, don't overwrite.**
+Never force-push. If you hit a rejected push, fetch and look at what the other
+agent did before deciding. The other agent's log and dashboard work is usually
+worth keeping even when their file changes conflict with yours.
+
+**4. Corrections are welcome and should be explicit.**
+Dolman caught Cairn's error (the dashboard claimed all 10 service-area pages
+were live; Idaho Springs returns 404). That's the system working. When you
+correct another agent's claim, say so plainly in the commit message.
+
+**5. When in doubt, log the open question rather than guessing.**
+A question in `log/` is cheap. A wrong edit that another agent then builds on
+is not.
+
+---
+
 ## Canonical reference
 
 **Name:** Bellas Mountain Vacation Cleaning (no apostrophe, ever)
