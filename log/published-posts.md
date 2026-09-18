@@ -18,9 +18,16 @@ publish until Sandra signs off (SO-04).
 | The Real Cost of Skipping a Pre-Winter Turnover | Seasonal, winter prep | Week 3, Sep 15–21 |
 | Standard vs Deep Clean (Prometheus refresh) | WP 5164 refresh with citations | Ready |
 | Fall in the Colorado Mountains | Seasonal, leaf season | Ready |
-| Bears Are Breaking Into Colorado Homes | Wildlife safety | Ready |
-| How to Prepare Your Mountain Home for Winter Turnover | Seasonal | ⚠️ overlaps another draft |
+| Bears Are Breaking Into Colorado Homes | Wildlife safety | **Final v3, Sep 18** — source-verified |
+| How to Prepare Your Mountain Home for Winter Turnover | Seasonal | **Final v2, Sep 18** — source-verified · ⚠️ overlaps another draft |
 | The Fragrance Loophole v2 | Clean Chem Intel pillar 1 | Domain decision pending |
 
 **Note:** two winter-turnover drafts exist (one from Cairn, one from Dolman).
 Only one should publish — pick or merge.
+
+**Sep 18 revision pass.** The bears post and the winter turnover post were taken
+to final draft and every factual claim was checked against its source. One dead
+citation was retired (energy.gov thermostat page) and six claims were corrected.
+The per-claim manifest is in the private vault at
+`data/research/source-verification-2026-09-18.md`. Both drafts and their
+paste-ready schema blocks are in `pre-publish/`.
