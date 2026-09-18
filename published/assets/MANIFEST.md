@@ -1,17 +1,14 @@
 # Image Archive — Manifest
 
-> Every image published on the BMVC site, harvested and archived.
-> **Harvested:** September 18, 2026 · **Optimized:** oversized files converted to WebP
+> Live images only. Harvested from bellasmountainvacationcleaning.com, September 18, 2026.
+> Oversized files optimized to WebP. Duplicates removed.
 
-**55 images** across 7 categories.
+**48 images.** Source of truth is the live site; this is a snapshot.
 
 ## How to use this
 
-Each entry gives you: the file, what it shows (alt text), the pages it appears on,
-and the live source URL. That is enough for a person or an AI to pick the right image
-for a post, an ad, or a repurposing job without opening every file.
-
-**Source of truth:** the `source_url` is the live site copy. This archive is a snapshot.
+Each entry gives the file, what it shows (alt text), the pages it appears on, and the
+live source URL. Enough for a person or an AI to pick the right image without opening files.
 
 ---
 
@@ -30,13 +27,7 @@ for a post, an ad, or a repurposing job without opening every file.
 
 ---
 
-## about  (11)
-
-### `5-red-flags-to-avoid-and-Bellas-Mountain-Vacation-Cleaning-Solutions-Denver-Colorado.webp`
-- **Shows:** Infographic of 5 red flags when hiring a Boulder house cleaner, including lack of insurance and bait-and-switch pricing.
-- **Size:** 333 KB *(optimized)*
-- **Used on:** /how-the-bellas-mountain-consumer-guide-protects-your-home/, /standard-vs-deep-clean-why-the-best-choice-is-a-strategic-cycle/, /the-5-most-common-cleaning-complaints-from-airbnb-guests-that-lead-to-refunds/, /why-your-visibly-clean-property-gets-4-star-cleanliness-reviews-and-what-to-do-about-it/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/02/5-red-flags-to-avoid-and-Bellas-Mountain-Vacation-Cleaning-Solutions-Denver-Colorado-2048x1121.png
+## about  (9)
 
 ### `About-Bellas-Mountain-Vacation-Cleaning-visual-selection-1.png`
 - **Shows:** Target with arrows illustrating Bellas Cleaning Satisfaction Guarantee: customer satisfaction, cleaning commitment, 48-hour guarantee, and no additional cost for service adjustments.
@@ -67,12 +58,6 @@ for a post, an ad, or a repurposing job without opening every file.
 - **Size:** 45 KB
 - **Used on:** /bellas-cleaning/about-us/
 - **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2024/09/Grandma-and-Bella.jpg
-
-### `Road-Ice-Destroys-Floors-lafayette-BMVC-Boulder-County-Bellas-Mountain-Vacation-Cleaning-scaled.webp`
-- **Shows:** An infographic titled &quot;The Salty Truth&quot; explaining how Magnesium Chloride road de-icer damages hardwood floors by attracting moisture and penetrating wood grains, and the two-step neutralization process required for cleaning.
-- **Size:** 397 KB *(optimized)*
-- **Used on:** /why-colorado-road-salt-is-destroying-your-boulder-hardwood-floors-and-the-scientific-way-to-clean-it/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/Road-Ice-Destroys-Floors-lafayette-BMVC-Boulder-County-Bellas-Mountain-Vacation-Cleaning-scaled.png
 
 ### `Sandra-Bellas_Mountain_Vacation_Cleaning.jpg`
 - **Shows:** Sandra Rose, owner-operator of Bellas Mountain Vacation Cleaning based in Black Hawk, Colorado.
@@ -110,7 +95,7 @@ for a post, an ad, or a repurposing job without opening every file.
 
 ---
 
-## vacation-rental  (16)
+## vacation-rental  (12)
 
 ### `5-Key-Triggers-for-a-Professional-Home-Deep-Clean.webp`
 - **Size:** 317 KB *(optimized)*
@@ -152,24 +137,6 @@ for a post, an ad, or a repurposing job without opening every file.
 - **Used on:** /standard-vs-deep-clean-why-the-best-choice-is-a-strategic-cycle/
 - **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/Standard-vs.-Deep-Cleaning-Service-Comparison-Matrix-2048x1143.png
 
-### `The-5-Star-Hospitality-Reset-Bridging-the-Trust-Gap-for-Boulder-County-Airbnb-Hosts.webp`
-- **Shows:** Main header image for Bella&#039;s Mountain Vacation Cleaning blog; a professional Airbnb turnover in Boulder showcasing the &#039;Sanctuary Reset&#039; standard, including HEPA-filtered dust removal and hotel-grade staging for short-term rentals in Lafayette and Boulder, CO.
-- **Size:** 230 KB *(optimized)*
-- **Used on:** /beyond-the-checklist-how-to-spot-a-cleaning-service-scam-before-its-too-late/, /how-the-bellas-mountain-consumer-guide-protects-your-home/, /standard-vs-deep-clean-why-the-best-choice-is-a-strategic-cycle/, /why-your-visibly-clean-property-gets-4-star-cleanliness-reviews-and-what-to-do-about-it/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/The-5-Star-Hospitality-Reset-Bridging-the-Trust-Gap-for-Boulder-County-Airbnb-Hosts-2048x1143.png
-
-### `The-Airbnb-Guest-Regret-Hierarchy-Preventing-Refunds-and-Protecting-Your-Boulder-County-Rental.webp`
-- **Shows:** An infographic titled &#039;The Airbnb Guest Regret Hierarchy&#039; by Bella’s Mountain Vacation Cleaning, categorizing short-term rental cleaning issues from minor annoyances like dust to high-impact refund drivers like hair, stains, and odors for Denver and Boulder hosts.
-- **Size:** 92 KB *(optimized)*
-- **Used on:** /beyond-the-checklist-how-to-spot-a-cleaning-service-scam-before-its-too-late/, /the-5-most-common-cleaning-complaints-from-airbnb-guests-that-lead-to-refunds/, /why-does-my-house-still-feel-dusty-after-cleaning/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/The-Airbnb-Guest-Regret-Hierarchy-Preventing-Refunds-and-Protecting-Your-Boulder-County-Rental.png
-
-### `Why-a-professional-deep-cleaning-is-a-critical-investment-for-Boulder-County-homes.webp`
-- **Shows:** Infographic explaining why professional deep cleaning is a critical investment for Boulder County homes, featuring wildfire soot (PAHs) removal, Healthy Buildings Roadmap compliance (2027-2029), and HVAC efficiency benefits.
-- **Size:** 287 KB *(optimized)*
-- **Used on:** /the-colorado-dust-paradox-why-your-home-is-never-truly-clean-at-high-altitude/, /what-actually-matters-for-your-mountain-home-when-choosing-a-house-cleaner-in-nederland-co/, /why-colorado-road-salt-is-destroying-your-boulder-hardwood-floors-and-the-scientific-way-to-clean-it/, /why-you-keep-your-bad-cleaner-a-guide-to-finding-a-great-one/, /why-your-mountain-home-needs-a-local-cleaner-not-a-franchise-checklist/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/Why-a-professional-deep-cleaning-is-a-critical-investment-for-Boulder-County-homes-2048x1143.png
-
 ### `bull-moose-dory-lakes-black-hawk-colorado.jpg`
 - **Shows:** Bull moose with full antlers in tall grass near Black Hawk, Colorado
 - **Size:** 207 KB
@@ -187,12 +154,6 @@ for a post, an ad, or a repurposing job without opening every file.
 - **Size:** 316 KB *(optimized)*
 - **Used on:** /, /vacation-rentals/short-term-rental-str-turnover/
 - **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/08/cozy-bedroom-plush-bedding-window.png
-
-### `deep-cleaning-services-lafayette-co-checklist.jpg.webp`
-- **Shows:** A detailed deep cleaning checklist for Lafayette homes, listing tasks like baseboard wiping, inside oven and refrigerator cleaning, range hood degreasing, grout scrubbing, and light fixture sanitization.
-- **Size:** 307 KB *(optimized)*
-- **Used on:** /standard-vs-deep-clean-why-the-best-choice-is-a-strategic-cycle/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/deep-cleaning-services-lafayette-co-checklist.jpg-2048x1143.png
 
 ### `unnamed-7-scaled.webp`
 - **Shows:** A circular diagram showing the &quot;Reset and Maintain&quot; system: beginning with a foundational Deep Clean to reset the hygiene baseline, followed by recurring Standard Cleaning to preserve it.
@@ -253,7 +214,7 @@ for a post, an ad, or a repurposing job without opening every file.
 
 ---
 
-## blog-infographics  (3)
+## blog-infographics  (2)
 
 ### `My_cleaning_philosophy-1-scaled.webp`
 - **Shows:** Purple infographic showing my home service principles.
@@ -266,12 +227,6 @@ for a post, an ad, or a repurposing job without opening every file.
 - **Size:** 238 KB *(optimized)*
 - **Used on:** /, /organization-decluttering/
 - **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/08/bathroom-freestanding-tub-mountain-view.png
-
-### `boulder-county-str-defensible-space-zones-diagram.jpg.jpg`
-- **Shows:** Top-down 3D diagram of a mountain home illustrating the three wildfire defensible space zones: Zone 1 (0-5ft Ember-Resistant), Zone 2 (5-30ft Lean, Clean, and Green), and Zone 3 (30-100ft Reduced Fuel) for Boulder County STR compliance.
-- **Size:** 204 KB
-- **Used on:** /the-5-most-common-cleaning-complaints-from-airbnb-guests-that-lead-to-refunds/, /why-does-my-house-still-feel-dusty-after-cleaning/, /why-your-visibly-clean-property-gets-4-star-cleanliness-reviews-and-what-to-do-about-it/
-- **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/01/boulder-county-str-defensible-space-zones-diagram.jpg.jpg
 
 ---
 
@@ -364,3 +319,18 @@ for a post, an ad, or a repurposing job without opening every file.
 - **Source:** https://bellasmountainvacationcleaning.com/wp-content/uploads/2026/02/unnamed49-scaled.png
 
 ---
+
+## Excluded from this archive
+
+These were live on the site but deliberately left out: images whose content carries
+out-of-scope geography (Boulder, Denver, Lafayette) or that came from properties in
+cities BMVC does not serve. They remain on the live site — removing them there is a
+separate content job.
+
+- `Road-Ice-Destroys-Floors-lafayette-BMVC-Boulder-County-Bellas-Mountain-Vacation-Cleaning-scaled.webp`
+- `5-red-flags-to-avoid-and-Bellas-Mountain-Vacation-Cleaning-Solutions-Denver-Colorado.webp`
+- `deep-cleaning-services-lafayette-co-checklist.jpg.webp`
+- `Why-a-professional-deep-cleaning-is-a-critical-investment-for-Boulder-County-homes.webp`
+- `The-5-Star-Hospitality-Reset-Bridging-the-Trust-Gap-for-Boulder-County-Airbnb-Hosts.webp`
+- `The-Airbnb-Guest-Regret-Hierarchy-Preventing-Refunds-and-Protecting-Your-Boulder-County-Rental.webp`
+- `boulder-county-str-defensible-space-zones-diagram.jpg.jpg`
