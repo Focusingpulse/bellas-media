@@ -30,7 +30,7 @@ Everything is live.
 | Vacation Rental Hub | Live |
 | STR Turnover | Live |
 | Rental Ready Prep | Live |
-| All 10 service-area pages | Live |
+| Service-area pages | **9 of 10 live — Idaho Springs is missing** |
 | Blog | Live |
 
 ### Recently completed
@@ -65,12 +65,21 @@ The most time-sensitive is the winter prep post, which is calendar-aligned for
 this week. Two of them cover similar ground — one needs to be dropped or
 merged.
 
+**Two of the six were taken to final draft on Sep 18** and now carry inline
+source links, verified point by point. The bears post and the winter turnover
+post. Both are in the private vault, and both have a source manifest behind
+them so any claim can be re-checked.
+
 ### What's coming next
 
 1. Your sign-off on the blog posts so they can publish
-2. Publishing cadence — the biggest open gap. Weekly posting is the target.
-3. MapQuest listing claim (shows the wrong city and old photos)
-4. Nine more directory listings need cleanup
+2. **Idaho Springs service-area page** — the one missing page of the ten.
+   Nine towns have pages. Idaho Springs returns a 404, which means any page
+   linking to it is pointing at nothing. It is also the only town in the
+   corridor where no competitor holds a local address edge.
+3. Publishing cadence — the biggest open gap. Weekly posting is the target.
+4. MapQuest listing claim (shows the wrong city and old photos)
+5. Nine more directory listings need cleanup
 
 ---
 

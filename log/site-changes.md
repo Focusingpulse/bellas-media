@@ -6,6 +6,31 @@ Newest first. Each entry: what changed, where, and verification status.
 
 ## September 18, 2026
 
+**Full-site link and source verification pass (Dolman)**
+
+29 URLs checked with cache-busted curl, status asserted on every one. Two
+findings, both for Chris.
+
+**1. Idaho Springs has no service-area page.** Nine of the ten towns resolve at
+`/service-areas/{town}/`. `/service-areas/idaho-springs/` returns 404. The town
+is in the service area, it appears in every service list the site publishes,
+and any page linking to it is pointing at a dead URL. It is also the only town
+in the corridor where no competitor holds a local address advantage.
+
+**2. `/get-a-quote/` does not exist, and should not.** The Get a Quote button
+resolves to `/contact-us/`. That is correct and consistent site-wide. Recorded
+so a duplicate quote page is not built later.
+
+Also confirmed canonical: `/about/` 301s to `/bellas-cleaning/about-us/`,
+`/blog/` 301s to `/bellas-cleaning/blog/`, and every root-level town URL 301s
+to its `/service-areas/` page. Copy should use the canonical targets.
+
+**Source check on the two Dolman blog drafts.** One dead citation found and
+retired. The winter post had been citing `energy.gov/energysaver/thermostats`
+for a 55 degree recommendation. That page returns 404 and the Department of
+Energy does not publish that figure. The claim was reassigned to CSU Extension,
+which does publish it. Five other claims corrected against their sources.
+
 **Veracity blip — Legacy Anchor corrected on 7 pages**
 The blip's Legacy Anchor field now carries the KGMID (`/g/11fz294ct9`) instead
 of the predecessor business name.
