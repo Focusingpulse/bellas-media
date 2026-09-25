@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voice Test</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0; padding: 18px 16px 60px;
+    font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #121116; color: #ece9f2;
+  }
+  h1 { font-size: 21px; margin: 0 0 4px; letter-spacing: -0.2px; }
+  .sub { color: #9b93ad; font-size: 14px; margin: 0 0 22px; }
+  .card {
+    background: #1d1b24; border: 1px solid #2e2a3a; border-radius: 14px;
+    padding: 16px; margin: 0 0 16px;
+  }
+  .label { font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: #a08cc9; margin: 0 0 10px; font-weight: 600; }
+  button {
+    display: block; width: 100%; border: 0; border-radius: 12px;
+    font: inherit; font-weight: 600; font-size: 18px; padding: 16px;
+    background: #50058D; color: #fff; margin: 0 0 10px; cursor: pointer;
+  }
+  button:active { opacity: .82; }
+  button.ghost { background: #2b2637; color: #d9d2e8; }
+  button.on { background: #b3261e; }
+  .out {
+    background: #100f14; border: 1px solid #2a2634; border-radius: 10px;
+    padding: 12px; min-height: 52px; font-size: 16px; word-break: break-word;
+    white-space: pre-wrap; color: #f2eefb; margin: 6px 0 0;
+  }
+  .out.dim { color: #8d85a0; }
+  pre.log {
+    background: #100f14; border: 1px solid #2a2634; border-radius: 10px;
+    padding: 12px; font-size: 12px; line-height: 1.5; overflow-x: auto;
+    white-space: pre-wrap; word-break: break-word; color: #b9b1c9; margin: 0;
+  }
+  .pill { display: inline-block; font-size: 12px; padding: 3px 9px; border-radius: 99px; margin: 0 6px 6px 0; }
+  .yes { background: #14401f; color: #7ee29a; }
+  .no  { background: #401717; color: #ff9b9b; }
+</style>
+</head>
+<body>
+
+<h1>Voice test</h1>
+<p class="sub">Two checks. Tap, talk, listen. Whatever breaks, the log at the bottom says why.</p>
+
+<div class="card">
+  <p class="label">1 &middot; Can this phone hear me?</p>
+  <button id="talkBtn">Tap to start listening</button>
+  <div class="out dim" id="heard">Nothing yet.</div>
+</div>
+
+<div class="card">
+  <p class="label">2 &middot; Can it talk back?</p>
+  <button id="speakBtn" class="ghost">Read it back to me</button>
+  <div class="out dim" id="speaking">Quiet.</div>
+</div>
+
+<div class="card">
+  <p class="label">Send this back</p>
+  <button id="copyBtn" class="ghost">Copy the log</button>
+  <pre class="log" id="log">starting…</pre>
+</div>
+
+<script>
+(function () {
+  var logEl = document.getElementById('log');
+  var lines = [];
+  function log(msg) {
+    lines.push(msg);
+    logEl.textContent = lines.join('\n');
+  }
+
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  // ---- environment report ------------------------------------------------
+  var voices = (window.speechSynthesis && window.speechSynthesis.getVoices()) || [];
+  log('secure context : ' + (window.isSecureContext ? 'yes' : 'NO'));
+  log('speech in      : ' + (SR ? 'SpeechRecognition present' : 'NOT SUPPORTED'));
+  log('speech out     : ' + (window.speechSynthesis ? 'speechSynthesis present' : 'NOT SUPPORTED'));
+  log('voices loaded  : ' + voices.length);
+  log('user agent     : ' + navigator.userAgent);
+
+  if (window.speechSynthesis) {
+    // iOS fills the voice list asynchronously
+    window.speechSynthesis.onvoiceschanged = function () {
+      log('voices (later) : ' + window.speechSynthesis.getVoices().length);
+    };
+  }
+
+  // ---- 1. hearing --------------------------------------------------------
+  var heardEl = document.getElementById('heard');
+  var talkBtn = document.getElementById('talkBtn');
+  var rec = null;
+  var listening = false;
+
+  if (!SR) {
+    heardEl.textContent = 'This browser will not listen. Safari should. Tell Dolman the log below.';
+    talkBtn.disabled = true;
+    talkBtn.textContent = 'Not available here';
+  }
+
+  talkBtn.addEventListener('click', function () {
+    if (listening) { try { rec.stop(); } catch (e) {} return; }
+    try {
+      rec = new SR();
+    } catch (e) {
+      log('recognition ctor failed: ' + e.name + ' / ' + e.message);
+      heardEl.textContent = 'Could not start: ' + e.name;
+      return;
+    }
+    rec.lang = 'en-US';
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.maxAlternatives = 1;
+
+    var finalText = '';
+
+    rec.onstart = function () {
+      listening = true;
+      talkBtn.textContent = 'Listening — tap to stop';
+      talkBtn.classList.add('on');
+      heardEl.classList.remove('dim');
+      log('listening started');
+    };
+
+    rec.onresult = function (ev) {
+      var interim = '';
+      for (var i = ev.resultIndex; i < ev.results.length; i++) {
+        var t = ev.results[i][0].transcript;
+        if (ev.results[i].isFinal) { finalText += t + ' '; } else { interim += t; }
+      }
+      heardEl.textContent = (finalText + interim).trim() || '…';
+      if (finalText) { window.__heard = finalText.trim(); }
+    };
+
+    rec.onerror = function (ev) {
+      log('listening error : ' + ev.error);
+      heardEl.textContent = 'Stopped: ' + ev.error;
+    };
+
+    rec.onend = function () {
+      listening = false;
+      talkBtn.textContent = 'Tap to start listening';
+      talkBtn.classList.remove('on');
+      log('listening ended');
+      if (!finalText) { heardEl.textContent = 'Heard nothing that time.'; }
+    };
+
+    try {
+      rec.start();
+      log('recognition.start() called');
+    } catch (e) {
+      log('start() threw: ' + e.name + ' / ' + e.message);
+      heardEl.textContent = 'Could not start: ' + e.name;
+    }
+  });
+
+  // ---- 2. speaking -------------------------------------------------------
+  var speakEl = document.getElementById('speaking');
+  var synth = window.speechSynthesis;
+
+  function speak(text) {
+    if (!synth) { speakEl.textContent = 'This browser will not speak.'; return; }
+    // iOS needs a user gesture and often one warmed-up call
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = 1.0; u.pitch = 1.0; u.volume = 1.0;
+    var v = synth.getVoices();
+    if (v.length) {
+      for (var i = 0; i < v.length; i++) {
+        if (/en[-_]US/i.test(v[i].lang)) { u.voice = v[i]; break; }
+      }
+    }
+    u.onstart = function () { speakEl.classList.remove('dim'); speakEl.textContent = 'Speaking…'; log('speak started'); };
+    u.onend   = function () { speakEl.textContent = 'Finished.'; log('speak finished'); };
+    u.onerror = function (ev) { speakEl.textContent = 'Speech error: ' + (ev.error || 'unknown'); log('speak error: ' + (ev.error || 'unknown')); };
+    synth.speak(u);
+    setTimeout(function () {
+      if (synth.speaking) { log('still speaking after 400ms: yes'); }
+      else { log('still speaking after 400ms: no'); }
+    }, 400);
+  }
+
+  document.getElementById('speakBtn').addEventListener('click', function () {
+    var t = (window.__heard && window.__heard.length) ? window.__heard
+          : 'Dolman here. If you can hear this, the phone can talk.';
+    log('speak text: ' + t);
+    speak(t);
+  });
+
+  // ---- send the log back -------------------------------------------------
+  document.getElementById('copyBtn').addEventListener('click', function () {
+    var payload = 'VOICE TEST LOG\n' + lines.join('\n');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(payload).then(
+        function () { copyBtn.textContent = 'Copied — paste it to Dolman'; },
+        function () { copyBtn.textContent = 'Copy failed — read it off the screen'; }
+      );
+    } else {
+      copyBtn.textContent = 'Copy unsupported — read it off the screen';
+    }
+  });
+})();
+</script>
+</body>
+</html>
