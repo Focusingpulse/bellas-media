@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a session &middot; Sandra Rose Sound Bath</title>
+<meta name="description" content="Request a private sound bath session in the mountains west of Denver. Tell me a day that suits you and I will send the address and what to expect.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@200;300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">Sandra&nbsp;Rose</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="what-is-a-sound-bath.html">What is a sound bath</a>
+      <a href="the-experience.html">The experience</a>
+      <a class="cta" href="book.html">Book a session</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="cosmos">
+    <div class="wrap page-head">
+      <p class="eyebrow" style="color:#e3b8ff;">By appointment</p>
+      <h1>Book a session</h1>
+      <p>Tell me a little and I will get back to you with a day and time.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split" style="align-items:start;">
+      <div>
+        <h2 class="mt0">Request a session</h2>
+        <form class="form" id="bookForm" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone (if you would rather a text back)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="people">How many of you</label>
+            <select id="people" name="people">
+              <option>Just me</option>
+              <option>Two of us</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="when">Days or times that suit you</label>
+            <input id="when" name="when" type="text" placeholder="For example, most weekday evenings, or Saturday morning">
+          </div>
+          <div class="field">
+            <label for="notes">Anything I should know</label>
+            <textarea id="notes" name="notes" placeholder="Pregnancy, an implanted device, a seizure disorder, or anything else that matters. This one is optional."></textarea>
+          </div>
+          <button class="btn" type="submit">Send request</button>
+          <p class="note" id="formNote" style="margin-top:16px;">This opens your email program with the details filled in. Nothing is stored on the site.</p>
+        </form>
+      </div>
+
+      <div>
+        <div class="art cool"><span class="art-cap">Sessions are private</span></div>
+        <h2 style="margin-top:34px;">What happens next</h2>
+        <p>I read every request myself and reply within a day. You will get the address, directions and a short note on how to prepare.</p>
+        <p>If the day you want is already taken, I will offer you the closest one I have.</p>
+        <h2>Before you book</h2>
+        <p>If you are pregnant, have a seizure disorder, have a pacemaker or another implanted device, or are working through recent trauma, please talk to your doctor first and tell me in the notes. I would rather adjust the session than have it be wrong for you.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand">Sandra&nbsp;Rose</span>
+        <p style="margin:0;">Private sound bath sessions in the mountains west of Denver, Colorado.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <p class="mb0">
+          <a href="what-is-a-sound-bath.html">What is a sound bath</a><br>
+          <a href="the-experience.html">The experience</a><br>
+          <a href="book.html">Book a session</a>
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p class="mb0">
+          <a href="book.html">Send a booking request</a><br>
+          <span style="opacity:.7;">Phone and email to be added</span>
+        </p>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; 2026 Sandra Rose Sound Bath</span>
+      <span>Mountain sessions, by appointment</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CHANGE THIS EMAIL when Sandra picks her contact address. */
+var BOOKING_EMAIL = "hello@example.com";
+
+document.getElementById('burger').addEventListener('click',function(){
+  document.getElementById('nav').classList.toggle('open');
+});
+
+document.getElementById('bookForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f = e.target;
+  var lines = [
+    'Name: '      + f.name.value,
+    'Email: '     + f.email.value,
+    'Phone: '     + f.phone.value,
+    'People: '    + f.people.value,
+    'Days: '      + f.when.value,
+    'Notes: '     + f.notes.value
+  ];
+  var subject = encodeURIComponent('Sound bath session request from ' + f.name.value);
+  var body    = encodeURIComponent(lines.join('\n'));
+  window.location.href = 'mailto:' + BOOKING_EMAIL + '?subject=' + subject + '&body=' + body;
+});
+</script>
+</body>
+</html>
